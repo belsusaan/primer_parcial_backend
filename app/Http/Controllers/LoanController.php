@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Book;
+use App\Models\Loan;
+use App\Http\Requests\StoreLoanRequest;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
 class LoanController extends Controller
