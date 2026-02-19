@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('book_id');
             $table->string('applicant_name');
             $table->string('loan_date');
-            $table->timestamps('return_date');
+            $table->timestamp('return_date')->nullable();
             $table->timestamps();
         });
     }
