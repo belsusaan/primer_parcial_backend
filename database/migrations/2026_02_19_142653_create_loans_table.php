@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('loans', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('book_id');
+            $table->string('applicant_name');
+            $table->string('loan_date');
+            $table->timestamps('return_date');
             $table->timestamps();
         });
     }
