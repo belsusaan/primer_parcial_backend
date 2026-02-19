@@ -16,8 +16,16 @@ class BookFactory extends Factory
      */
     public function definition(): array
     {
+        $totalCopies = $this->faker->numberBetween(1, 10);
+        $availableCopies = $this->faker->numberBetween(0, $totalCopies);
+
         return [
-            //
+            'title' => $this->faker->sentence(3, true),
+            'description' => $this->faker->paragraph(2),
+            'isbn' => $this->faker->unique()->numerify('978#########'),
+            'total_copies' => $totalCopies,
+            'available_copies' => $availableCopies,
+            'status' => $availableCopies > 0,
         ];
     }
 }
